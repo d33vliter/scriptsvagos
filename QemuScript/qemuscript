@@ -1,6 +1,6 @@
 #!/bin/bash
 #hecho por l3afapad
-sudo apt-get install qemu-kvm qemu libvirt-clients virt-viewer figlet
+sudo apt-get install qemu-kvm qemu libvirt-clients figlet
 clear
 sleep 1s
 clear
@@ -29,7 +29,7 @@ echo "nombre de la maquina(discoduro): "
 read duro
 echo "elija la ubicacion de la iso a instalar o ejecutar: "
 read cdrom
-kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro.img -cdrom $cdrom -vga qxl -spice port=5900,addr=127.0.0.1,disable-ticketing & remote-viewer spice://127.0.0.1:5900 && killall qemu-system-x86_64 && clear;;
+kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro.img -cdrom $cdrom && clear;;
 
 3)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
 read ram
@@ -37,7 +37,7 @@ echo "cantidad de nucleos a usar(ej: 1): "
 read nucleo
 echo "nombre de la maquina(discoduro): "
 read duro
-kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro.img -vga qxl -spice port=5900,addr=127.0.0.1,disable-ticketing & remote-viewer spice://127.0.0.1:5900 && killall qemu-system-x86_64 && clear;;
+kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro.img && clear;;
 
 4)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
 read ram
@@ -45,7 +45,7 @@ echo "cantidad de nucleos a usar(ej: 1): "
 read nucleo
 echo "elija la ubicacion de la iso a ejecutar: "
 read cdrom
-kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda -vga qxl -spice port=5900,addr=127.0.0.1,disable-ticketing & remote-viewer spice://127.0.0.1:5900 && killall qemu-system-x86_64 && clear;;
+kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda && clear;;
 
 5)clear && echo "gracias por usar mi script :D" && sleep 1s && clear;
 exit 1;;
