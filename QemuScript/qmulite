@@ -6,7 +6,7 @@ do
 clear
 figlet "QmuLite"
 echo "1. Crear maquina virtual"
-echo "2. Instalar sistema en en maquina virtual"
+echo "2. Instalar sistema en maquina virtual"
 echo "3. Ejecutar Maquina virtual."
 echo "4. Ejecutar solo Live iso"
 echo "5.salir"
