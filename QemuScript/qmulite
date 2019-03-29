@@ -10,6 +10,8 @@ echo "2. Instalar sistema en en maquina virtual"
 echo "3. Ejecutar Maquina virtual."
 echo "4. Ejecutar solo Live iso"
 echo "5.salir"
+echo
+echo "Elige una opcion: "
 read opcion
 case $opcion in
 
