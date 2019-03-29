@@ -1,0 +1,53 @@
+#!/bin/bash
+#hecho por l3afapad
+sudo apt-get install qemu-kvm qemu libvirt-clients virt-viewer figlet
+clear
+sleep 1s
+clear
+while :
+do
+figlet "Qemu Script"
+echo "1. crear maquina virtual"
+echo "2. configurar y ejecutar maquina virtual para instalar sistema"
+echo "3. Ejecutar Maquina virtual."
+echo "4. Ejecutar solo Live Iso"
+echo "5.salir"
+read opcion
+case $opcion in
+
+1)clear && echo "Escriba nombre que le dara al discoduro: "
+read image
+echo "escriba el tamaño que le asignara al discoduro(ej: 8G): "
+read gb
+qemu-img create -f qcow2 $image.img $gb && clear && echo "maquina virtual creada" && sleep 1s && clear;;
+
+2)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
+read ram
+echo "cantidad de nucleos a usar(ej: 1): "
+read nucleo
+echo "nombre de la maquina(discoduro): "
+read duro
+echo "elija la ubicacion de la iso a instalar o ejecutar: "
+read cdrom
+kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro.img -cdrom $cdrom -vga qxl -spice port=5900,addr=127.0.0.1,disable-ticketing & remote-viewer spice://127.0.0.1:5900 && killall qemu-system-x86_64 && clear;;
+
+3)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
+read ram
+echo "cantidad de nucleos a usar(ej: 1): "
+read nucleo
+echo "nombre de la maquina(discoduro): "
+read duro
+kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro.img -vga qxl -spice port=5900,addr=127.0.0.1,disable-ticketing & remote-viewer spice://127.0.0.1:5900 && killall qemu-system-x86_64 && clear;;
+
+4)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
+read ram
+echo "cantidad de nucleos a usar(ej: 1): "
+read nucleo
+echo "elija la ubicacion de la iso a ejecutar: "
+read cdrom
+kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda -vga qxl -spice port=5900,addr=127.0.0.1,disable-ticketing & remote-viewer spice://127.0.0.1:5900 && killall qemu-system-x86_64 && clear;;
+
+5)clear && echo "gracias por usar mi script :D" && sleep 1s && clear;
+exit 1;;
+esac
+done
