@@ -1,5 +1,5 @@
 #!/bin/bash
-#hecho por l3afapad
+#hecho por l33afapad
 sudo apt-get install qemu-kvm qemu libvirt-clients figlet yad
 while :
 do
