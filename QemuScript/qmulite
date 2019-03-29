@@ -8,7 +8,7 @@ figlet "QmuLite"
 echo "1. Crear maquina virtual"
 echo "2. Instalar sistema en en maquina virtual"
 echo "3. Ejecutar Maquina virtual."
-echo "4. Ejecutar solo Live Iso"
+echo "4. Ejecutar solo Live iso"
 echo "5.salir"
 read opcion
 case $opcion in
@@ -27,7 +27,7 @@ echo "Cantidad de nucleos a usar(ej: 1): "
 read nucleo
 echo "Elige maquina virtual a usar: "
 duro=$(yad --title "Selecciona una maquina virtual" yad --file-selection)
-echo "Elige ubicacion de la iso a instalar: "
+echo "Elige iso a instalar: "
 cdrom=$(yad --title "Selecciona una iso" --file-selection)
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro -cdrom $cdrom && clear;;
 
@@ -43,7 +43,7 @@ kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro && c
 read ram
 echo "Cantidad de nucleos a usar(ej: 1): "
 read nucleo
-echo "Elige ubicacion de la iso a ejecutar: "
+echo "Elige iso a ejecutar: "
 cdrom=$(yad --title "Selecciona una iso" --file-selection)
 
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda  && clear;;
