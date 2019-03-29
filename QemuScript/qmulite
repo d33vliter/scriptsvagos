@@ -27,7 +27,7 @@ read ram
 echo "cantidad de nucleos a usar(ej: 1): "
 read nucleo
 echo "Elige disco virtual a usar(discoduro): "
-duro=$(--title "Selecciona una Maquina Virtual" yad --file-selection)
+duro=$(yad --title "Selecciona una Maquina Virtual" yad --file-selection)
 echo "elija la ubicacion de la iso a instalar: "
 cdrom=$(yad --title "Selecciona una iso" --file-selection)
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro -cdrom $cdrom && clear;;
