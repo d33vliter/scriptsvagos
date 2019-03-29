@@ -1,14 +1,13 @@
 #!/bin/bash
 #hecho por l3afapad
-sudo apt-get install qemu-kvm qemu libvirt-clients figlet
-clear
-sleep 1s
+sudo apt-get install qemu-kvm qemu libvirt-clients figlet yad
 clear
 while :
 do
+clear
 figlet "Qemu Script"
 echo "1. crear maquina virtual"
-echo "2. configurar y ejecutar maquina virtual para instalar sistema"
+echo "2. Instalar sistema en en maquina virtual"
 echo "3. Ejecutar Maquina virtual."
 echo "4. Ejecutar solo Live Iso"
 echo "5.salir"
@@ -25,26 +24,27 @@ qemu-img create -f qcow2 $image.img $gb && clear && echo "maquina virtual creada
 read ram
 echo "cantidad de nucleos a usar(ej: 1): "
 read nucleo
-echo "nombre de la maquina(discoduro): "
-read duro
-echo "elija la ubicacion de la iso a instalar o ejecutar: "
-read cdrom
-kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro.img -cdrom $cdrom && clear;;
+echo "Elige disco virtual a usar(discoduro): "
+duro=$(--title "Selecciona una Maquina Virtual" yad --file-selection)
+echo "elija la ubicacion de la iso a instalar: "
+cdrom=$(yad --title "Selecciona una iso" --file-selection)
+kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro -cdrom $cdrom && clear;;
 
 3)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
 read ram
 echo "cantidad de nucleos a usar(ej: 1): "
 read nucleo
-echo "nombre de la maquina(discoduro): "
-read duro
-kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro.img && clear;;
+echo "Elige disco virtual a usar(discoduro): "
+duro=$(yad --title "Selecciona una Maquina Virtual" --file-selection)
+kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro && clear;;
 
 4)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
 read ram
 echo "cantidad de nucleos a usar(ej: 1): "
 read nucleo
 echo "elija la ubicacion de la iso a ejecutar: "
-read cdrom
+cdrom=$(yad --title "Selecciona una iso" --file-selection)
+
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda && clear;;
 
 5)clear && echo "gracias por usar mi script :D" && sleep 1s && clear;
