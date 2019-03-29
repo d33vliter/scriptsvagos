@@ -1,6 +1,6 @@
 #!/bin/bash
 #hecho por l3afapad
-sudo apt-get install qemu-kvm qemu libvirt-clients figlet yad
+sudo apt-get install qemu-kvm qemu libvirt-clients figlet
 clear
 while :
 do
@@ -16,9 +16,11 @@ case $opcion in
 
 1)clear && echo "Escriba nombre que le dara al discoduro: "
 read image
+echo "Seleccione la ubicacion donde se alojara el discoduro: "
+ubi=$(yad --title "Selecciona Ubicacion" --file-selection --directory)
 echo "escriba el tamaño que le asignara al discoduro(ej: 8G): "
 read gb
-qemu-img create -f qcow2 $image.img $gb && clear && echo "maquina virtual creada" && sleep 1s && clear;;
+qemu-img create -f qcow2 $ubi/$image.img $gb && clear && clear &&echo "maquina virtual creada con exito!" && sleep 1s && clear;;
 
 2)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
 read ram
@@ -45,7 +47,7 @@ read nucleo
 echo "elija la ubicacion de la iso a ejecutar: "
 cdrom=$(yad --title "Selecciona una iso" --file-selection)
 
-kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda && clear;;
+kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda  && clear;;
 
 5)clear && echo "gracias por usar mi script :D" && sleep 1s && clear;
 exit 1;;
