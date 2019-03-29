@@ -34,7 +34,7 @@ echo "nombre de la maquina(discoduro): "
 read duro
 echo "elija la ubicacion de la iso a instalar o ejecutar: "
 read cdrom
-qemu-system-x86_64 -m $ram -boot d -enable-kvm -smp $nucleo -net nic -net user -hda $duro.img -cdrom $cdrom && clear;;
+kvm -m $ram -boot d -enable-kvm -smp $nucleo -net nic -net user -hda $duro.img -cdrom $cdrom && clear;;
 
 
 3)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
@@ -43,7 +43,7 @@ echo "cantidad de nucleos a usar(ej: 1): "
 read nucleo
 echo "nombre de la maquina(discoduro): "
 read duro
-qemu-system-x86_64 -m $ram -boot d -enable-kvm -smp $nucleo -net nic -net user -hda $duro.img && clear;;
+kvm -m $ram -boot d -enable-kvm -smp $nucleo -net nic -net user -hda $duro.img && clear;;
 
 4)clear && echo "gracias por usar mi script :D" && sleep 1s && clear;
 exit 1;;
