@@ -1,6 +1,6 @@
 #!/bin/bash
 #hecho por l3afapad
-sudo apt-get install qemu-kvm qemu libvirt-clients figlet
+sudo apt-get install qemu-kvm qemu libvirt-clients figlet yad
 while :
 do
 clear
