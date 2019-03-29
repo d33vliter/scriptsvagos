@@ -4,7 +4,7 @@ sudo apt-get install qemu-kvm qemu libvirt-clients figlet yad
 while :
 do
 clear
-figlet "Qemu Script"
+figlet "QmuLite"
 echo "1. Crear maquina virtual"
 echo "2. Instalar sistema en en maquina virtual"
 echo "3. Ejecutar Maquina virtual."
@@ -13,11 +13,11 @@ echo "5.salir"
 read opcion
 case $opcion in
 
-1)clear && echo "Escriba nombre que le dara a la maquina virtual: "
+1)clear && echo "Escribe nombre que le dara a la maquina virtual: "
 read image
 echo "Seleccione la ubicacion donde se alojara la maquina virtual: "
 ubi=$(yad --title "Selecciona Ubicacion" --file-selection --directory)
-echo "Escriba el tamaño que le asignara a la maquina virtual(ej: 8G): "
+echo "Escribe el tamaño que le asignara a la maquina virtual(ej: 8G): "
 read gb
 qemu-img create -f qcow2 $ubi/$image.img $gb && clear && clear &&echo "Maquina virtual creada con exito!" && sleep 1s;;
 
