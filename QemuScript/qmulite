@@ -1,12 +1,11 @@
 #!/bin/bash
 #hecho por l3afapad
 sudo apt-get install qemu-kvm qemu libvirt-clients figlet
-clear
 while :
 do
 clear
 figlet "Qemu Script"
-echo "1. crear maquina virtual"
+echo "1. Crear maquina virtual"
 echo "2. Instalar sistema en en maquina virtual"
 echo "3. Ejecutar Maquina virtual."
 echo "4. Ejecutar solo Live Iso"
@@ -14,21 +13,21 @@ echo "5.salir"
 read opcion
 case $opcion in
 
-1)clear && echo "Escriba nombre que le dara al discoduro: "
+1)clear && echo "Escriba nombre que le dara a la maquina virtual: "
 read image
-echo "Seleccione la ubicacion donde se alojara el discoduro: "
+echo "Seleccione la ubicacion donde se alojara la maquina virtual: "
 ubi=$(yad --title "Selecciona Ubicacion" --file-selection --directory)
-echo "escriba el tamaño que le asignara al discoduro(ej: 8G): "
+echo "Escriba el tamaño que le asignara a la maquina virtual(ej: 8G): "
 read gb
-qemu-img create -f qcow2 $ubi/$image.img $gb && clear && clear &&echo "maquina virtual creada con exito!" && sleep 1s && clear;;
+qemu-img create -f qcow2 $ubi/$image.img $gb && clear && clear &&echo "Maquina virtual creada con exito!" && sleep 1s;;
 
-2)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
+2)clear && echo "Escribe cantidad de ram que agregaras en mb(ej: 1024): "
 read ram
-echo "cantidad de nucleos a usar(ej: 1): "
+echo "Cantidad de nucleos a usar(ej: 1): "
 read nucleo
-echo "Elige disco virtual a usar(discoduro): "
-duro=$(yad --title "Selecciona una Maquina Virtual" yad --file-selection)
-echo "elija la ubicacion de la iso a instalar: "
+echo "Elige maquina virtual a usar: "
+duro=$(yad --title "Selecciona una maquina virtual" yad --file-selection)
+echo "Elige ubicacion de la iso a instalar: "
 cdrom=$(yad --title "Selecciona una iso" --file-selection)
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro -cdrom $cdrom && clear;;
 
@@ -40,16 +39,16 @@ echo "Elige disco virtual a usar(discoduro): "
 duro=$(yad --title "Selecciona una Maquina Virtual" --file-selection)
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro && clear;;
 
-4)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
+4)clear && echo "Escribe cantidad de ram que agregaras en mb(ej: 1024): "
 read ram
-echo "cantidad de nucleos a usar(ej: 1): "
+echo "Cantidad de nucleos a usar(ej: 1): "
 read nucleo
-echo "elija la ubicacion de la iso a ejecutar: "
+echo "Elige ubicacion de la iso a ejecutar: "
 cdrom=$(yad --title "Selecciona una iso" --file-selection)
 
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda  && clear;;
 
-5)clear && echo "gracias por usar mi script :D" && sleep 1s && clear;
+5)clear && echo "Gracias por usar mi script :D" && sleep 1s && clear;
 exit 1;;
 esac
 done
