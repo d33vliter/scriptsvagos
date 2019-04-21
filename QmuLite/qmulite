@@ -1,6 +1,6 @@
 #!/bin/bash
 #hecho por l33afpad
-sudo apt-get install qemu-kvm qemu libvirt-clients figlet yad
+sudo apt-get install qemu-kvm qemu libvirt-clients figlet zenity
 while :
 do
 clear
@@ -19,7 +19,7 @@ case $opcion in
 read image
 echo
 echo "Seleccione la ubicacion donde se alojara la maquina virtual: "
-ubi=$(yad --title "Selecciona Ubicacion" --file-selection --directory)
+ubi=$(zenity --title "Selecciona Ubicacion" --file-selection --directory)
 echo
 echo "Escribe el tamaño que le asignara a la maquina virtual(ej: 8G): "
 read gb
@@ -32,10 +32,10 @@ echo "Cantidad de nucleos a usar(ej: 1): "
 read nucleo
 echo
 echo "Elige maquina virtual a usar: "
-duro=$(yad --title "Selecciona una maquina virtual" yad --file-selection)
+duro=$(zenity --title "Selecciona una maquina virtual" --file-selection)
 echo
 echo "Elige iso a instalar: "
-cdrom=$(yad --title "Selecciona una iso" --file-selection)
+cdrom=$(zenity --title "Selecciona una iso" --file-selection)
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro -cdrom $cdrom && clear;;
 
 3)clear && echo "escribe cantidad de ram que agregaras en mb(ej: 1024): "
@@ -45,7 +45,7 @@ echo "cantidad de nucleos a usar(ej: 1): "
 read nucleo
 echo
 echo "Elige disco virtual a usar(discoduro): "
-duro=$(yad --title "Selecciona una Maquina Virtual" --file-selection)
+duro=$(zenity --title "Selecciona una Maquina Virtual" --file-selection)
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -soundhw hda -hda $duro && clear;;
 
 4)clear && echo "Escribe cantidad de ram que agregaras en mb(ej: 1024): "
@@ -55,7 +55,7 @@ echo "Cantidad de nucleos a usar(ej: 1): "
 read nucleo
 echo
 echo "Elige iso a ejecutar: "
-cdrom=$(yad --title "Selecciona una iso" --file-selection)
+cdrom=$(zenity --title "Selecciona una iso" --file-selection)
 
 kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda  && clear;;
 
@@ -63,3 +63,4 @@ kvm -m $ram -boot d -smp $nucleo -net nic -net user -cdrom $cdrom -soundhw hda  
 exit 1;;
 esac
 done
+
