@@ -1,5 +1,3 @@
-# Scripts Vagos
-
 Scripts que me facilitan la vida
 
 Por ahora los scripts funcionan con Distros basadas en Debian/Ubuntu/LinuxMint.
