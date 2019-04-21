@@ -8,4 +8,4 @@ De igual manera pueden cambiar los parametros dependiendo que distro usen :D.
 Recuerden volverlos ejecutables con `chmod +x ` desde la terminal. 
 
 ---
-1. [QmuLite](QmuLite/qmulite)
+1. [QmuLite](QmuLite/README.rd)
