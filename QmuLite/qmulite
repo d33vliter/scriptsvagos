@@ -1,6 +1,7 @@
 #!/bin/bash
 #hecho por l33afpad
 sudo apt-get install qemu-kvm qemu libvirt-clients figlet zenity
+sudo adduser $USER kvm
 while :
 do
 clear
