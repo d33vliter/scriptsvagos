@@ -4,8 +4,9 @@ mkdir adapirutheme
 cd adapirutheme
 wget http://http.us.debian.org/debian/pool/main/a/adapta-gtk-theme/adapta-gtk-theme_3.95.0.11-1_all.deb
 wget http://http.us.debian.org/debian/pool/main/p/papirus-icon-theme/papirus-icon-theme_20190203-1_all.deb
-
 clear && echo "ahora pedira permisos root para poder instalar el tema/icono" && sleep 3s && clear
+sudo apt update
+sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf fonts-roboto fonts-noto
 sudo dpkg -i *
 echo "aplicando tema"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adapta"
