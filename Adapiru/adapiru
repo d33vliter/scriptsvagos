@@ -7,6 +7,7 @@ wget http://http.us.debian.org/debian/pool/main/p/papirus-icon-theme/papirus-ico
 
 clear && echo "ahora pedira permisos root para poder instalar el tema/icono" && sleep 3s && clear
 sudo dpkg -i *
+sudo apt-get -f install
 echo "aplicando tema"
 xfconf-query -c xsettings -p /Net/ThemeName -s "Adapta"
 xfconf-query -c xfwm4 -p /general/theme -s "Adapta"
