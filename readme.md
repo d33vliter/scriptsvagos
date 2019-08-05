@@ -6,7 +6,7 @@ De igual manera pueden cambiar los parametros dependiendo que distro usen :D.
 Recuerden volverlos ejecutables con `chmod +x ` desde la terminal. 
 
 ---
-1. [QmuLite](QmuLite/README.md)
+1. [QmuLite](QmuLite/readme.md)
 
 2. [Adapiru](Adapiru/readme.md)
 
