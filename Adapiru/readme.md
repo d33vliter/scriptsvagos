@@ -1,4 +1,4 @@
-#Adapiru
+# Adapiru
 
 Script para instalar tema Adapta con iconos Papirus.
 
