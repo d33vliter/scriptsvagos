@@ -1,6 +1,6 @@
 # Adapiru
 
-Script para instalar tema Adapta con iconos Papirus.
+Script para instalar tema Adapta con iconos Papirus en XFCE.
 
 Recuerda volverlo ejecutable con `chmod+x adapiru`
 
