@@ -1,7 +1,13 @@
-1. [QmuLite](QmuLite/readme.md)
+---
+layout: page
+title: Scripts
+permalink: scripts
+---
 
-2. [Adapiru](Adapiru/readme.md)
+1. [QmuLite](QmuLite/readme)
 
-3. [YTD-VideoDownloader](ytd/readme.md)
+2. [Adapiru](Adapiru/readme)
 
-4. [EspeakWritter](EspeakWritter/readme.md)
+3. [YTD-VideoDownloader](ytd/readme)
+
+4. [EspeakWritter](EspeakWritter/readme)
