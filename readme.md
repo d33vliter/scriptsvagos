@@ -6,3 +6,5 @@ Recuerden volverlos ejecutables con `chmod +x ` desde la terminal.
 
 ---
 1. [Scripts](scripts/readme.md)
+
+2. [Posts](posts/readme.md)
