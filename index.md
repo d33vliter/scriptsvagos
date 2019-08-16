@@ -5,6 +5,6 @@ De igual manera pueden cambiar los parametros dependiendo que distro usen.
 Recuerden volverlos ejecutables con `chmod +x ` desde la terminal. 
 
 ---
-1. [Scripts](scripts/)
+1. [Scripts](scripts)
 
-2. [Posts](posts/)
+2. [Posts](posts)
