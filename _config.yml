@@ -1,7 +1,6 @@
-
-title: "ScriptsVagos"
-
-theme: jekyll-theme-console
+title: Scripts Vagos
+description: Para vagos de mrd como tu.
+theme: jekyll-theme-cayman
 header_pages:
   - index.md
   - scripts.md
