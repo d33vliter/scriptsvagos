@@ -12,9 +12,8 @@ Por lo general este fix es para entornos de escritorio como XFCE(en la version 4
 
 dentro de 20-intel.conf poner lo siguente:
 
-`Section "Device"
- Identifier "Intel Graphics"
- Driver "intel"
- Option "TearFree" "true"
-EndSection
-`
+    Section "Device"
+        Identifier "Intel Graphics"
+        Driver "intel"
+        Option "TearFree" "true"
+    EndSection
