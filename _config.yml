@@ -1,1 +1,7 @@
-theme: jekyll-theme-cayman
+
+title: "ScriptsVagos"
+
+theme: jekyll-theme-console
+header_pages:
+  - index.md
+  - scripts.md

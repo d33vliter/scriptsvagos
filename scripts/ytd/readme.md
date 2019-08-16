@@ -1,3 +1,6 @@
+---
+layout: page
+---
 # YTD Video downloader
 
 Script para descargar videos de youtube u otra plataforma(creo).
