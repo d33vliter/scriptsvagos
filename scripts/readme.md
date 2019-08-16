@@ -1,8 +1,3 @@
----
-layout: page
-title: Scripts
-permalink: scripts
----
 
 1. [QmuLite](QmuLite/readme)
 
