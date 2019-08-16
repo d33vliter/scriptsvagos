@@ -1,8 +1,8 @@
 
-1. [QmuLite](QmuLite/readme)
+1. [QmuLite](QmuLite)
 
-2. [Adapiru](Adapiru/readme)
+2. [Adapiru](Adapiru)
 
-3. [YTD-VideoDownloader](ytd/readme)
+3. [YTD-VideoDownloader](ytd)
 
-4. [EspeakWritter](EspeakWritter/readme)
+4. [EspeakWritter](EspeakWritter)
