@@ -1,3 +1,6 @@
+---
+layout: page
+---
 # QmuLite
 
 Script para ejecutar maquinas virtuales con Qemu-KVM.
