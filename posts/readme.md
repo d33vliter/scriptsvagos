@@ -1,1 +1,1 @@
-1.[Eliminar Screen Tearing en graficas intel Linux](tearingfree.md)
+1.[Eliminar Screen Tearing en graficas intel Linux](tearfree.md)
