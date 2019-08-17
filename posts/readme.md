@@ -1,1 +1,1 @@
-[tearfree intel linux](tearfreeintel.txt)
+[Eliminar Tearing intel linux](tearfreeintel.md)
