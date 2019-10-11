@@ -1,11 +1,22 @@
+# QMULITE
 
-# QmuLite
+Script para ejecutar maquinas virtuales con QEMU-KVM.
 
-Script para ejecutar maquinas virtuales con Qemu-KVM.
 
-Recuerda volverlo ejecutable con `chmod+x qmulite`
+## Instalacion:
 
-[Descargar](qmulite)
+Ejecutar `./instalar` (pedira contraseña)
+
+Ya podras ejecutar QMULITE en tu terminal con `qmulite`
+
+
+## Desinstalar:
+
+Ejecutar `./desinstalar` (pedira contraseña)
+
+---
+
+[Descargar](https://github.com/d33vliter/qmulite/archive/master.zip)
 
 
 **Captura:**
