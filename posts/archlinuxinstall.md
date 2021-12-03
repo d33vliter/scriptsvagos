@@ -74,7 +74,7 @@ Vamos a darle formato:
 
 ### **Instalar paquetes esenciales**
 
-    # pacstrap /mnt base base-devel linux linux-firmware nano sudo
+    # pacstrap /mnt base base-devel linux linux-firmware nano sudo networkmanager
 <p>&nbsp;</p>
 
 
